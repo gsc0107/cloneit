@@ -2,6 +2,7 @@ function Plasmid(sequence,is_forward)
 	{
 	this.sequence=sequence;
 	this.is_forward=is_forward;
+	this.sites=[];
 	}
 
 Plasmid.prototype.length=function()
@@ -16,6 +17,7 @@ Plasmid.prototype.size=function()
 
 Plasmid.prototype.at=function(index)
 	{
+	index=index%this.size();
 	if(!this.is_forward)
 		{
 		return this.sequence.at(index);
@@ -34,22 +36,34 @@ Plasmid.prototype.at=function(index)
 	
 Plasmid.prototype.digest=function(rebase)
 	{
-	var i,j,k,enz,site;
+	var i,k,site;
 	this.sites=[];
+	
 	for(k=0;k< rebase.size();++k)
 		{
-		enz=rebase.get(k);
+		
+		var j;
+		var enz=rebase.get(k);
+
+		var enz_len=enz.size();
+
+		
 		for(i=0;i< this.size();++i)
 			{
-			for(j=0;j<enz.size();++j)
+			
+			for(j=0;j< enz_len ;++j)
+				{
+				if(!enz.cut(j,this.at(i+j))) break;
+				}
+
+			if(j==enz_len)
 				{
 				
-				}
-			if(j==enz.size())
-				{
 				site=new Site(this,enz,i);
 				this.sites.push(site);
+				
 				}
+			
 			}
 		}
 	this.sites.sort(Site.sortOnPos);

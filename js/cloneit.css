@@ -1,0 +1,17 @@
+.rebase1 {
+	background: #E7F3CF;
+	padding: 5px;
+	-moz-column-count: 5; 
+	-moz-column-gap: 20px;
+	-moz-column-rule: 3px double #666;
+	-webkit-column-count: 5; 
+	-webkit-column-gap: 20px;
+	-webkit-column-rule: 3px double #666;
+	column-count: 5; 
+	column-gap: 20px;
+	column-rule: 3px double #666;
+	}
+
+.enzyme1 {
+	font-size:12px;
+	}
