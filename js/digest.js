@@ -43,6 +43,14 @@ this.addEventListener("load",function(evt){
 			td.appendChild(document.createTextNode(enz2.getPosition()));
 			td=document.createElement("td");tr.appendChild(td);
 			td.appendChild(document.createTextNode(enz2.getEnzyme().getName()));
+			
+			td=document.createElement("td");tr.appendChild(td);
+			td.appendChild(document.createTextNode(
+				enz1===enz2?App.plasmid.size():
+					enz1.getPosition()<=enz2.getPosition()?
+						enz2.getPosition() -enz1.getPosition() : 
+						App.plasmid.size() - (enz1.getPosition() -enz2.getPosition())
+						));
 			}
 		alert("ok");
 		});
