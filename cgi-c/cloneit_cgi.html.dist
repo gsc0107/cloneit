@@ -1,0 +1,141 @@
+
+
+<FONT  SIZE=2 COLOR=red>
+S: parameter used in sub-cloning strategies.<BR>
+D: parameter used in in-frame deletions strategies.<BR>
+F: parameter used in frameshift strategies.<BR>
+O: Optional/ CloneIt will try to find the best value.<BR>
+</FONT>
+
+
+
+<form name="CloneItForm" action="/cgi-bin/caltech//cloneitcgi"   method="POST">
+<CENTER><TABLE BORDER=2 WIDTH=100%>
+<TR>
+<TD>
+<CENTER><B><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#vector">VECTOR</A></B></CENTER>
+
+</TD>
+
+<TD>
+<CENTER><B><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#insert">INSERT</A></B></CENTER>
+
+</TD>
+</TR>
+
+<TD>
+<UL>
+<LI>Name:<input type="text" Value="vector" name="V_name" SIZE="15"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#ATG">ATG Frame</A>
+<INPUT TYPE="RANGE"  NAME="V_ATG" MIN="0" MAX="99999" SIZE="6"> <FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#cloning_box">Cloning box</A>: From
+<INPUT TYPE="RANGE"  NAME="V_min" MIN="0" MAX="99999" SIZE="6" > to 
+<INPUT TYPE="RANGE"  NAME="V_max" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+</UL>
+</TD>
+<TD>
+<UL>
+<LI>Name:<input type="text" Value="insert" name="I_name" SIZE="15"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#ATG">ATG Frame</A>
+<INPUT TYPE="RANGE"  NAME="I_ATG" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#cloning_box">5' Cloning box</A>: From
+<INPUT TYPE="RANGE" COLS=5 NAME="I_min" MIN=0 MAX=99999 SIZE="6"> to 
+<INPUT TYPE="RANGE" COLS=5 NAME="I_min_int" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#cloning_box">3' Cloning box</A>: From
+<INPUT TYPE="RANGE" COLS=5 NAME="I_max_int" MIN=0 MAX=99999 SIZE="6"> to 
+<INPUT TYPE="RANGE" COLS=5 NAME="I_max" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+</UL>
+</TD>
+</TR>
+
+
+<TR>
+<TD>
+<CENTER>
+Paste your sequence below<BR>
+<TEXTAREA   COLS=40 ROWS=10 name="V_seq">
+</TEXTAREA></CENTER></TD>
+<TD>
+<CENTER>
+Paste your sequence below<BR>
+<TEXTAREA   COLS=40 ROWS=10 name="I_seq">
+</TEXTAREA></CENTER></TD>
+</TR>
+</TABLE></CENTER>
+<H3>PARAMETERS</H3>
+<UL>
+<LI><input type="checkbox" name="cip" value="1"><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#CIP">Use Phosphatase</A><FONT  SIZE=2 COLOR=red>[S]</FONT>
+<LI><input type="checkbox" name="frame5" value="1"><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#Clone_in_frame">Clone in frame at 5' (N terminal)</A><FONT  SIZE=2 COLOR=red>[S]</FONT>
+<LI><input type="checkbox" name="frame3" value="1"><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#Clone_in_frame">Clone in frame at 3' (C terminal)</A><FONT  SIZE=2 COLOR=red>[S]</FONT>
+<LI><input type="checkbox" name="partial" value="1"><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#partial">Allow 1 partial site</A><input type="checkbox" name="partial_blunt" value="1" CHECKED>
+	<A HREF="/saf_manuals/cloneit//CloneIt_Help.html#partial">only if it is blunt</A><FONT  SIZE=2 COLOR=red>[SDF]</FONT>
+<LI><input type="checkbox" name="short" value="1" CHECKED><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#short_sites">Discard short sites (increase speed)</A><FONT  SIZE=2 COLOR=red>[SDF]</FONT>
+<LI><input type="checkbox" name="klenow" value="1" ><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#polymerase">Use T4 DNA Pol. or Klenow</A><FONT  SIZE=2 COLOR=red>[SD]</FONT>
+<LI><input type="checkbox" name="carboxy" value="1" CHECKED ><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#carboxy">Look for Carboxy-terminal deletions</A><FONT  SIZE=2 COLOR=red>[D]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#pct_deletion">Maximum deletion (percentage of insert)</A>
+<SELECT NAME="max_deletion">
+<OPTION VALUE="10">10
+<OPTION  VALUE="20">20
+<OPTION VALUE="30">30
+<OPTION VALUE="40">40
+<OPTION VALUE="50">50
+<OPTION VALUE="60">60
+<OPTION VALUE="70">70
+<OPTION SELECTED VALUE=80>80
+<OPTION VALUE="90">90
+</SELECT><FONT  SIZE=2 COLOR=red>[DF]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#pct_deletion">Minimum deletion (percentage of insert)</A>
+<SELECT NAME="min_deletion">
+<OPTION VALUE="10">10
+<OPTION SELECTED VALUE=20>20
+<OPTION VALUE="30">30
+<OPTION VALUE="40">40
+<OPTION VALUE="50">50
+<OPTION VALUE="60">60
+<OPTION VALUE="70">70
+<OPTION VALUE="80">80
+<OPTION VALUE="90">90
+</SELECT><FONT  SIZE=2 COLOR=red>[DF]</FONT>
+<LI><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#num_sol">Maximum number of solutions</A>
+<SELECT NAME="max_num">
+<OPTION VALUE="5">5
+<OPTION  SELECTED VALUE="10">10
+<OPTION VALUE="25">25
+<OPTION VALUE="50">50
+<OPTION VALUE="100">100
+</SELECT>
+</UL>
+<BR>
+<H3><A HREF="/saf_manuals/cloneit//CloneIt_Help.html#stgy">STRATEGIES</A></H2>
+Look for <SELECT NAME="strategy">
+<OPTION  SELECTED value="1">Sub-Cloning INSERT into VECTOR
+<OPTION VALUE=2>Frameshift in INSERT
+<OPTION VALUE=3>Deletion in INSERT
+<OPTION VALUE=4>Intersections
+<OPTION VALUE=5>Restriction Maps
+</SELECT>
+<P>
+<input type="reset" value="Clear">
+<input type="submit" value="CloneIt!">
+</form>
+<UL>
+	<LI>Related Links
+	 <UL>
+	 <LI><A HREF="http://locus.jouy.inra.fr/virim/L002.htm">laboratoire de Biologie Moleculaire des Rotavirus</A>.
+	 <LI><A HREF="http://topaze.jouy.inra.fr/cgi-bin/CloneIt/CloneIt">CloneIt Online</A> home page
+	 <LI>Dr. Richard Robert & Macelis'<A HREF="http://rebase.neb.com"> REBASE</A> at <A HREF="http://www.neb.com">New Englands Biolabs</A>.
+	</UL>
+	<LI>Bibliography
+	 <UL>
+	 <LI>Roberts, R. J. & Macelis, D. (1998). <A HREF="http://rebase.neb.com">REBASE</A>--restriction enzymes and methylases. Nucl. Ac. Res. 26, 338-350.
+	 <LI><A HREF="http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9682060&dopt=Abstract">LINDENBAUM Pierre (1998) CloneIt (tm):Finding Cloning strategies. BioInformatics Vol 14, 5 pp 465-466.</A>
+	</UL>
+	<LI>Acknowledgments
+	 <P>I would like to thank Audrey Nepveu-de-Villemarceau, C. CARON , Melle DERAT for their precious help.
+	<LI>How to cite this program ?<BR>
+	 <BLINK>If you use this program, please, cite it in your papers:</BLINK><BR><CENTER><H3>
+	 <A HREF="http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9682060&dopt=Abstract">LINDENBAUM Pierre (1998) CloneIt (tm):Finding Cloning strategies. BioInformatics Vol 14, 5 pp 465-466.</A>
+</H3></CENTER><BR>
+</UL>
+
+

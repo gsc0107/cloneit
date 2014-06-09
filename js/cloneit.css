@@ -15,3 +15,8 @@
 .enzyme1 {
 	font-size:12px;
 	}
+
+textarea.seqarea {
+	width: 75%;
+	height: 150px;
+	}

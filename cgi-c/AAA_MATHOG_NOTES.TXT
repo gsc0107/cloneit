@@ -1,0 +1,36 @@
+Notes 05-JUN-2014 David Mathog
+This software broke somewhere along the line, perhaps due to changes in the
+browsers/web server.  Had to modify the binary to make it work again.
+The problem concerns HTML input "range" types.  Older browsers put up a box
+and returned 0 if the user didn't enter anything.  Newer browsers put up
+a slider and return (min+max)/2 if the user doesn't enter anything.  Binary
+now expects 2nd behavior, just put a big warning in the HTML not to use
+older style browsers.
+
+Notes 28-APR-2010 David Mathog
+default file protections on linux tighter than on solaris.  Results
+in some of the files being 600 and the web server can't read them, results
+in an obscure "SERVER ERROR" message, with nothing in the server log files.
+After make, do
+  chmod g+r *
+  chmod o+r *
+and it takes care of it.
+
+Changes 17-AUG-2002, David Mathog
+
+1.  foo_.html -> foo.html_  (this allowed a trivial "install" in the makefile).
+2.  fixed various problems in head.html (mailto: where it shouldn't have been)
+3.  Added explicit path to cloneitcgi in some places, else example.html
+    failed because it directed to cgi in same directory as that file.
+4.  Modified makefile so that normal build does NOT install by default.
+5.  Added a few more explicit paths in makefile and some of the .html_ files.
+
+After that it installed and worked with just:
+
+% make
+% make install
+
+Not fixed yet:  The use of trailing "/" is not uniform, so some paths/URLS are
+ending up with "foo/blah" and others "foo//blah".  Both work, but it should be
+cleaned up anyway (at some point).
+

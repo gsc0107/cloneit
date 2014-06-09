@@ -26,6 +26,19 @@ Rebase.prototype.add=function(name,size,weight)
 	return enz;
 	}
 
+Rebase.prototype.subset=function(arrayOfBool)
+	{
+	var copy=new Rebase();
+	var i=0;
+	for(i=0;i< this.size() && i < arrayOfBool.length ;++i)
+		{
+		if(!arrayOfBool[i]) continue;
+		copy.enzymes.push(this.get(i));
+		}
+	return copy;
+	}
+
+
 Rebase.uncheckSmalls=function(elementsForms,weight)
 	{
 	for(var i=0;i< elementsForms.length; ++i)

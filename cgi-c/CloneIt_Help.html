@@ -1,0 +1,164 @@
+<HTML><HEAD><TITLE>CloneIt Help</TITLE>
+<META NAME="keywords" CONTENT="CloneIt rotavirus cut free molecular biology DNA plasmid endonucleases restriction enzyme REBASE polymerase cloning delCONTENT="CloneIt rotavirus cut free molecular biology DNA plasmid endonucleases restriction enzyme REBASE">
+</HEAD>
+<BODY BGCOLOR="#FFFFFF" LINK="#110A7F" VLINK="#314D8F" ALINK="#55C3FF">
+<H6>Last compilation: Thu Apr 29 14:07:19 PDT 2010</H6>
+<H1 ALIGN=CENTER><FONT SIZE=+4>CloneIt!&reg;</FONT><P>WWW Version</H1><P>
+<H4 ALIGN=CENTER><A HREF="__MYMAIL__">LINDENBAUM Pierre</A> (1998)
+<A HREF="http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9682060&dopt=Abstract">Bioinformatics/CABIOS
+Vol.14;5,1998 pp465-466</A></H4>
+<H3 ALIGN=CENTER>current version is <B>2.2</B></H3>
+<p align="center">
+<a href="/saf_manuals/cloneit/example.html">[ Example ]</a> 
+<a href="/saf_manuals/cloneit/CloneIt_Help.html">[ Help ]</a> 
+<a href="mailto:lindenb@cng.fr">[ Feedback ]</a> 
+<a href="http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9682060&dopt=Abstract">[ Refs ]</a> 
+<a href="http://rebase.neb.com">[ Rebase ]</a> 
+<a href="http://locus.jouy.inra.fr/virim/L002.htm">[ BMR ]</a> 
+
+</p>
+<DL>
+<DT><B>What is CloneIt ?</B>
+<DD>Molecular biologists often have to sub-clone plasmidic vectors: a DNA plasmid is cleaved and ligated with 
+	an exogen DNA fragment previously excised from an other plasmid. The necessary cuts are achieved by restriction 
+	enzymes which then must be carefully choosen in order to minimize the steps required to obtain the desired 
+	molecule. During the selection of those enzymes, the main difficulties encountered come from: the knowldege of:
+	<UL>
+		<LI>the enzymes' characteristics
+		<LI>the localization of the cuts within the sequence
+		<LI>the complementarity between the protuding ends
+		<LI>the possible self ligation of the vector
+		<LI>the use of modifying DNA polymerases generating blunt ends
+		<LI>the constraint to clone the insert in-frame with a vector sequence<LI>the use of partial digestions
+		<LI>the creation of a stop codon after the ligation.
+	</UL>
+We developed the <B>CloneIt</B> program that quickly 
+ finds in-frame deletions using restriction enzymes and frameshifts (using digestion, fill-in and ligation) in a plasmid sequence, Then, as the main functions and procedures were being developed, we have extended the capacities of the 
+	 program to find strategies to sub-clone a fragment from a plasmid to another vector while still controling the
+	  problems described above. This program <B>is not an expert system</B>, as it does not "learn" the logical steps 
+	  accomplished by the biologist and it does not have to be accompanied in its search: it just runs an algorithm that 
+	explores all the possible enzymes combinations that could be used to clone the molecules.<BR>
+	This program provides a useful aid for any molecular biologist who wants 
+	to quickly find sub-cloning, in-frame deletions, frameshifts strategies, which would otherwise be difficult to discover.<BR>
+
+<DT><B>Restriction Enzymes ?</B>
+<DD >REBASE((c)New England BioLabs) is a database of all known Restriction  Enzymes. It was created by 
+Dr. Richard J.Roberts and Dr Dana Macelis and is freely available on <A HREF="http://rebase.neb.com">http://rebase.neb.com</A>.
+
+<DT><A NAME="vector"><A NAME="insert"><B>Vector and Insert</B>
+<DD>The "VECTOR" plasmid, is designed to be the plasmid where the user wants to subclone a DNA fragment. This DNA fragment is excised from the "INSERT" plasmid.Degenerate 
+templates are not allowed. Numbers will be 
+discarded.The DNA sequence is a <B>circular</B> plasmid sequence. 
+<B>Translated sequences are supposed to be oriented from NH2 to COOH</B>.
+<P>
+<CENTER><IMG SRC="cloneit.jpeg"></CENTER>
+<P>
+<DT><A NAME="ATG"><B>ATG frame</B>
+<DD>If the coding frame is of importance, the program can find the best frame to be used on each plasmid.
+ This step may be usefull either to manage in-frame ligations or to test if a ligation creates a stop codon.
+In the INSERT plasmid, the best candidate is the largest Open Reading Frame (ORF) found inside the fragment. On the contrary, in the VECTOR plasmid, the best candidate is the largest ORF in the polylinker OR on both sides of the polylinker.
+
+<DT><A NAME="cloning_box"><B>Cloning boxes</B>
+<DD>
+ The VECTOR contains <B>one cloning box</B> ( a polylinker region ) where restriction sites should be localized 
+ to linearise it. Meanwhile the INSERT contains <B>two cloning boxes</B> where the endonucleases should free the 
+ DNA fragment. short database of different sequence of classic oligonucleotides is used by 
+ the program to try to localize the insert bounds</A>, therefore it can easily localize the position of an insert
+ in a pBS-like plasmid. If CloneIt cannot recognize the plasmid, the user will have to input the positions of
+ those extremities himself.
+
+<DT><A NAME="cip"><B>Use a Phosphatase</B>
+<DD>The usage of calf intestine alkaline phosphatase (CIAP) can be moderated. This enzyme removes the phosphate 
+group at the 5' terminus of DNA strands, thus preventing self-annealing from the VECTOR prior to INSERT 
+fragment insertion. If CIAP is allowed in a strategy, the program looks for enzymes cutting one time inside 
+the INSERT fragment, one time in the VECTOR sequence that could be used to determine the fragment orientation.
+
+<DT><A NAME="Clone_in_frame"><B>Cloning insert in frame with the vector</B>
+<DD>If specified, the program will only find strategies where the insert is in frame cloned with the vector frame.
+
+<DT><A NAME="partial"><B>Partial digestions</B>
+<DD>The user may allow one partial digestion in the strategies. Partial digestions are sites cut
+ by the enzymes used in a cloning strategy but localized out of the VECTOR cloning box, or within 
+ the INSERT fragment.You can choose to allow partial digestions only if the used enzyme cuts BLUNT. Such sites won't modify the sequence
+if a modifying polymerase<is used in a cloning strategy.
+
+<DT><A NAME="short_sites"><B>Discard short sites</B>
+<DD>The user can choose to discard enzymes recognizing a short sequence ( such as AluI [AG/CT] ).
+ Those enzymes have a high probability to cleave many times and everywhere in a sequence and are insightly 
+ unuseful for cloning.
+ 
+<DT><A NAME="polymerase"><B>Use T4 DNA Pol. or Klenow</B>
+<DD>The Klenow fragment and the T4 DNA polymerase are both modifying DNA polymerases whose use can be 
+controlled by user. The Klenow and the T4 DNA polymerase possess a 5'-3' polymerase activity which 
+synthetises a complementary DNA strand. The second polymerase has already got a strong 3'-5' exonuclease
+ activity considerably more active on single stranded DNA than on double stranded DNA, this activity is blocked 
+on double-stranded DNA by 5'-3' polymerase activity. <B>Those enzymes are used to fill-in recessed ends 
+and to create blunt extremities.</B>
+
+<DT><A NAME="carboxy"><B>Look for Carboxy-terminal deletions</B>
+<DD>CloneIt also proposes sites that do not necessarily create in-frame deletion 
+but who can be also used to make carboxy terminal deletions. In such cases, the 
+program will propose a single site within the insert and the user will have to 
+choose any compatible unique site that is localized at the 3' side of the insert. 
+Such C-terminal deletions do not have to be in-framed because they just need the 
+presence of a stop codon after the ligation site.
+
+<DT><A NAME="pct_deletion"><B>Percentages of deletion</B>
+<DD>Many of the deletions found could indeed involve sites inside the INSERT cloning boxes, while they are supposed to contain many restriction sites: the INSERT fragment would be hardly or totally deleted. Nevertheless CloneIt offers the ability to set t
+
+he deletion percentage with regard to the insert length.
+Use those fields if you do not wants deletions superior to 80% of the INSERT fragment no deletions inferior to 20% of the INSERT fragment.
+
+<DT><A NAME="num_sol"><B>Maximum number of solutions</B>
+<DD>If CloneIt finds more solutions than this number, it will try to sort the strategies and it will just display those 'n' best strategies.
+
+<DT><A NAME="stgy"><B>Strategies</B>
+<DD>
+	<UL>
+	<LI><B>Sub-Cloning INSERT into VECTOR</B>: will find strategies to sub clone the DNA fragment (defined by
+		the INSERT boxes) into the VECTOR defined box.
+	<LI><B>Frameshift in INSERT</B>: will find strategies to make frameshifts within INSERT after a digestion/fill-in/ligation process.
+	<LI><B>Deletion in INSERT</B>:will find in-frame deletion within INSERT.
+	<LI><B>Intersections</B>:compare VECTOR and INSERT from "the number of restriction sites" point of view.
+	<LI><B>Restriction Maps</B>: display VECTOR and INSERT restrictions maps.
+	</UL>
+<DT><A NAME="allenz_classic"><B>Just use classical enzymes</B>
+	<DD>CloneIt uses a smaller REBASE file containing a few enzymes. This option increase the speed.</DD>
+
+</DL>
+<UL>
+	<LI>Related Links
+	 <UL>
+	 <LI><A HREF="http://locus.jouy.inra.fr/virim/L002.htm">laboratoire de Biologie Moleculaire des Rotavirus</A>.
+	 <LI><A HREF="http://topaze.jouy.inra.fr/cgi-bin/CloneIt/CloneIt">CloneIt Online</A> home page
+	 <LI>Dr. Richard Robert & Macelis'<A HREF="http://rebase.neb.com"> REBASE</A> at <A HREF="http://www.neb.com">New Englands Biolabs</A>.
+	</UL>
+	<LI>Bibliography
+	 <UL>
+	 <LI>Roberts, R. J. & Macelis, D. (1998). <A HREF="http://rebase.neb.com">REBASE</A>--restriction enzymes and methylases. Nucl. Ac. Res. 26, 338-350.
+	 <LI><A HREF="http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9682060&dopt=Abstract">LINDENBAUM Pierre (1998) CloneIt (tm):Finding Cloning strategies. BioInformatics Vol 14, 5 pp 465-466.</A>
+	</UL>
+	<LI>Acknowledgments
+	 <P>I would like to thank Audrey Nepveu-de-Villemarceau, C. CARON , Melle DERAT for their precious help.
+	<LI>How to cite this program ?<BR>
+	 <BLINK>If you use this program, please, cite it in your papers:</BLINK><BR><CENTER><H3>
+	 <A HREF="http://www.ncbi.nlm.nih.gov:80/entrez/query.fcgi?cmd=Retrieve&db=PubMed&list_uids=9682060&dopt=Abstract">LINDENBAUM Pierre (1998) CloneIt (tm):Finding Cloning strategies. BioInformatics Vol 14, 5 pp 465-466.</A>
+</H3></CENTER><BR>
+</UL>
+
+
+<HR />
+<P />
+<ADRESS>
+<DL>
+<DT><A HREF="mailto:lindenb@cng.fr">Pierre LINDENBAUM PhD</A></DT>.
+<DD>
+Laboratoire de Biologie Mol&eacute;culaire des Rotavirus.<BR />
+<A HREF="http://locus.jouy.inra.fr/virim/L002.htm">Virologie et Immunologie Mol&eacute;culaires.</A><BR />
+<A HREF="http://www.inra.fr">Institut National de la Recherche Agronomique</A>.<BR />
+78350 Jouy-en-Josas Cedex FRANCE.
+</DD>
+</DL>
+</ADRESS>
+</BODY>
+</HTML>

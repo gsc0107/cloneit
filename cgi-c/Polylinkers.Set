@@ -1,0 +1,21 @@
+;
+;CloneItÅ V2.2 Pierre LINDENBAUM 1998
+; List of Polylinkers from CloneIt.
+;Use the oligo that you would have used to amplify your gene
+;Syntax: Name,Direct,Reverse,
+;
+pTOPO,ACCATGATTACGCCAAGCTTG,ATACGACTCACTATAGGGCGA,
+pFASTBAC,TATTCCGGATTATTCATACC,GATTATGATCCTCTAGTACTTCTCGAC,
+Baculo,ttttactgttttcgtaacagtttt,cggatttccttgaagagagta,
+pBK,ggtctatataagcagagctggt,acaggaaacagctatgaccttg,
+GEX,atcgaaggtcg,tcagtcagtcacgatg,
+T7/T3,aattaaccctcactaaaggg,taatacgactcactataggg,
+pET25B,TAATACGACTCACTATA,CCCGTTTAGAGGCCCCAAGGGGTTA,
+pIIIMS2-1,ttccggctagaactagtggatcc,tcgactctagaggatcg,
+pIIIMS2-2,agagtcgacctgcaggcatgcaagctg,gctagaactagtggatcc,
+pGBT9,CAGTTGACTGTATCGCCG,GCCCGGAATTAGCTTGG,
+pGAD424,CCAAAAAAAGAGATC,TTCAGTATCTACGATTCAT,
+pGADGL,CCAAAAAAAGAGATC,ACTATAGGGCGAATTGG,
+pcDNAFLAG,atggactacaaggacgacgatgacaa,cttggtaccgagctcggatcc,
+pcDNA3,CACTATAGGGAGACCC,AGGTGACACTATAGAATA,
+pYX213,TAACGTCAAGGAGAAAAAACCCCGGAT,GAAAAACGTTCATTGTTCCTTAT,

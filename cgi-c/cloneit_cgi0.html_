@@ -1,0 +1,58 @@
+
+
+<FONT  SIZE=2 COLOR=red>
+S: parameter used in sub-cloning strategies.<BR>
+D: parameter used in in-frame deletions strategies.<BR>
+F: parameter used in frameshift strategies.<BR>
+O: Optional/ CloneIt will try to find the best value.<BR><BR>
+<B>This application ONLY WORKS with browsers like Firefox and Opera that show ranges as a slider!<BR>
+If you see two fields next to "Cloning box" and no slider you must use another browser.</B>
+</FONT>
+
+
+
+<form name="CloneItForm" action="__CGI_PATH__/cloneitcgi"   method="POST">
+<CENTER><TABLE BORDER=2 WIDTH=100%>
+<TR>
+<TD>
+<CENTER><B><A HREF="__HELP_PATH__/CloneIt_Help.html#vector">VECTOR</A></B></CENTER>
+
+</TD>
+
+<TD>
+<CENTER><B><A HREF="__HELP_PATH__/CloneIt_Help.html#insert">INSERT</A></B></CENTER>
+
+</TD>
+</TR>
+
+<TD>
+<UL>
+<LI>Name:<input type="text" Value="vector" name="V_name" SIZE="15"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="__HELP_PATH__/CloneIt_Help.html#ATG">ATG Frame</A>
+<INPUT TYPE="RANGE"  NAME="V_ATG" MIN="0" MAX="99999" SIZE="6"> <FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="__HELP_PATH__/CloneIt_Help.html#cloning_box">Cloning box</A>: From
+<INPUT TYPE="RANGE"  NAME="V_min" MIN="0" MAX="99999" SIZE="6" > to 
+<INPUT TYPE="RANGE"  NAME="V_max" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+</UL>
+</TD>
+<TD>
+<UL>
+<LI>Name:<input type="text" Value="insert" name="I_name" SIZE="15"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="__HELP_PATH__/CloneIt_Help.html#ATG">ATG Frame</A>
+<INPUT TYPE="RANGE"  NAME="I_ATG" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="__HELP_PATH__/CloneIt_Help.html#cloning_box">5' Cloning box</A>: From
+<INPUT TYPE="RANGE" COLS=5 NAME="I_min" MIN=0 MAX=99999 SIZE="6"> to 
+<INPUT TYPE="RANGE" COLS=5 NAME="I_min_int" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+<LI><A HREF="__HELP_PATH__/CloneIt_Help.html#cloning_box">3' Cloning box</A>: From
+<INPUT TYPE="RANGE" COLS=5 NAME="I_max_int" MIN=0 MAX=99999 SIZE="6"> to 
+<INPUT TYPE="RANGE" COLS=5 NAME="I_max" MIN=0 MAX=99999 SIZE="6"><FONT  SIZE=2 COLOR=red>[O]</FONT>
+</UL>
+</TD>
+</TR>
+
+
+<TR>
+<TD>
+<CENTER>
+Paste your sequence below<BR>
+<TEXTAREA   COLS=40 ROWS=10 name="V_seq">

@@ -1,0 +1,128 @@
+<1>AvrII
+<2>
+<3>Anabaena variabilis uw
+<4>E.C. Rosenvold
+<5>C^CTAGG
+<6>
+<7>N
+<8>1161,1162,1338,1729
+<1>BamHI
+<2>
+<3>Bacillus amyloliquefaciens H
+<4>ATCC 49763
+<5>G^GATCC
+<6>5(4)
+<7>BCFHIJKMNOQRSUVXY
+<8>198,499,676,1189,1714,2096,2286
+<1>BglII
+<2>
+<3>Bacillus globigii
+<4>ATCC 49760
+<5>A^GATCT
+<6>5(4)
+<7>BCFHIJKMNOQRSUVXY
+<8>61,62,475,1563,1957
+<1>EcoRI
+<2>
+<3>Escherichia coli RY13
+<4>R.N. Yoshimori
+<5>G^AATTC
+<6>3(6)
+<7>BCFHIJKMNOQRSUVXY
+<8>43,473,537,624,678,1562,2022,2293
+<1>HindIII
+<2>
+<3>Haemophilus influenzae Rd
+<4>ATCC 51907
+<5>A^AGCTT
+<6>1(6)
+<7>BCFHIJKMNOQRSUVXY
+<8>524,525,526,527,1488,1731,1732
+<1>KpnI
+<2>
+<3>Klebsiella pneumoniae OK8
+<4>ATCC 49790
+<5>GGTAC^C
+<6>4(6)
+<7>BCFHIJKMNOQRSUVXY
+<8>258,259,261,934,1480,1881,2049,2328
+<1>NcoI
+<2>
+<3>Nocardia corallina
+<4>ATCC 19070
+<5>C^CATGG
+<6>?(4)
+<7>BCFHJKMNOQRSUXY
+<8>1049,2127,2128,2398
+<1>NheI
+<2>
+<3>Neisseria mucosa
+<4>ATCC 25999
+<5>G^CTAGC
+<6>
+<7>BCFJKMNOQRSUX
+<8>350,2340
+<1>NotI
+<2>
+<3>Nocardia otitidis-caviarum
+<4>ATCC 14630
+<5>GC^GGCCGC
+<6>?(4)
+<7>BCFHJKMNOQRSUXY
+<8>174,1332,1338,1630
+<1>PstI
+<2>
+<3>Providencia stuartii 164
+<4>ATCC 49762
+<5>CTGCA^G
+<6>5(6)
+<7>BCFHIJKMNOQRSUVXY
+<8>203,670,1746,1881,2069,2227,2229,2311
+<1>PvuII
+<2>
+<3>Proteus vulgaris
+<4>ATCC 13315
+<5>CAG^CTG
+<6>4(4)
+<7>BCFHIJKMNOQRSUVXY
+<8>217,585,1036,1690,2023
+<1>SalI
+<2>
+<3>Streptomyces albus G
+<4>ATCC 49789
+<5>G^TCGAC
+<6>5(6)
+<7>BCFHIJKMNOQRSUVXY
+<8>48,72,1720
+<1>SmaI
+<2>
+<3>Serratia marcescens Sb
+<4>ATCC 49779
+<5>CCC^GGG
+<6>2(4)
+<7>BCFHIJKMNOQRSUVXY
+<8>218,502,625,951
+<1>XbaI
+<2>
+<3>Xanthomonas badrii
+<4>ATCC 11672
+<5>T^CTAGA
+<6>6(6)
+<7>BCFHIJKMNOQRSUVXY
+<8>1515,2382
+<1>XhoI
+<2>
+<3>Xanthomonas holcicola
+<4>ATCC 13461
+<5>C^TCGAG
+<6>5(6)
+<7>BFHJKMNOQRSUXY
+<8>60,587,1346,1957
+<1>XmaI
+<2>SmaI
+<3>Xanthomonas malvacearum
+<4>ATCC 9924
+<5>C^CCGGG
+<6>?(4)
+<7>INRUV
+<8>502,1166,1169
